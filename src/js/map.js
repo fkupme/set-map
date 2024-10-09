@@ -1,4 +1,4 @@
-class ErrorRepository {
+export default class ErrorRepository {
 	constructor(){
 		this.repo = new Map();
 		this.arr = [
@@ -17,7 +17,7 @@ class ErrorRepository {
 	}
 	// генерирует код ошибки
 	codeCreate(){
-		let code = Math.round(Math.random() * 1000)
+		let code = Math.round((Math.random() * 1000) + 100)
 		if(this.repo.has(code)){
 			code = this.codeCreate();
 		}

@@ -1,5 +1,5 @@
 
-class Char {
+export class Char {
   constructor([name, type, attack, defense]) {
     this.name = name;
     this.type = type;
@@ -8,7 +8,7 @@ class Char {
   }
 }
 
-class Team {
+export class Team {
 		constructor() {
 				this.members = new Set();
 		}
@@ -26,6 +26,6 @@ class Team {
 			})
 		}
 		toArray(){
-			return [...this.members]
+			return Array.from(this.members)
 		}
 	}

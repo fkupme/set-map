@@ -13,7 +13,7 @@ class Settings{
 	}
 	select(prop, val){
 		if(!this.selected.has(prop)
-			||!this.settings.hasOwnProperty(prop)
+			||!Object.prototype.hasOwnProperty.call(this.settings, prop)
 		||!this.settings[prop].includes(val)){
 			return this.selected
 		}
