@@ -1,4 +1,4 @@
-class Settings{
+export default class Settings{
 	constructor(){
 		this.selected = new Map(Object.entries({
 			'theme': 'dark',
@@ -11,6 +11,7 @@ class Settings{
       'difficulty': ['easy', 'normal', 'hard', 'nightmare']
 		}
 	}
+	// тут вопрос можно было бы передавать массив объектов или оставить так?
 	select(prop, val){
 		if(!this.selected.has(prop)
 			||!Object.prototype.hasOwnProperty.call(this.settings, prop)

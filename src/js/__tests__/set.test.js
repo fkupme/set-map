@@ -6,7 +6,8 @@ const db =[
   ['Лучник', 'Человек', 8, 4],
   ['Паладин', 'Человек', 9, 6],
   ['Жрец', 'Гном', 6, 8]
-].forEach(item=> chars.push(new Char(item)));
+]
+db.forEach(item=> chars.push(new Char(item)));
 const team = new Team();
 
 test('size of collection after pushing one character',()=>{

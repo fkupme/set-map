@@ -24,19 +24,22 @@ export default class ErrorRepository {
 		return code;
 		
 	}
-	// добавляет ошибки в репозиторий
+	//принимает массив, добавляет ошибки в репозиторий
 	pushError(errorMessageArray){
+		const codeArray =[];
 		errorMessageArray.forEach(message => {
-			this.repo.set(this.codeCreate(), message)
+			const code = this.codeCreate();
+			this.repo.set(code, message);
+			codeArray.push(code);
 		});
-    
+    return codeArray
 	}
 	// переводит ошибку по коду 
 	translate(code){
-		const key = this.repo.get(code)
-		if(!key){
+		const description = this.repo.get(code)
+		if(!description){
 			return 'Unknown error'
 		}
-		return this.repo.key;
+		return description;
 	}
 }
